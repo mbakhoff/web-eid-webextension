@@ -21,7 +21,7 @@
  */
 
 export default Object.freeze({
-  NATIVE_APP_NAME: "eu.webeid",
+  NATIVE_APP_NAME: "eu.webeid.batch",
   VERSION:         "{{package.version}}",
 
   NATIVE_MESSAGE_MAX_BYTES: 8192,

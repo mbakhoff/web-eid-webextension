@@ -25,13 +25,12 @@ import ContextInsecureError from "@web-eid.js/errors/ContextInsecureError";
 
 import { TokenSigningErrorResponse } from "../models/TokenSigning/TokenSigningResponse";
 import config from "../config";
-import injectPageScript from "./TokenSigning/injectPageScript";
 import tokenSigningResponse from "../shared/tokenSigningResponse";
 
 function isWebeidEvent(event: MessageEvent): boolean {
   return (
     event.source === window &&
-    event.data?.action?.startsWith?.("web-eid:")
+    event.data?.action?.startsWith?.("web-eid-batch:")
   );
 }
 
@@ -116,8 +115,3 @@ window.addEventListener("message", async (event) => {
     }
   }
 });
-
-// --[ chrome-token-signing backwards compatibility ]---------------------------
-if (config.TOKEN_SIGNING_BACKWARDS_COMPATIBILITY) {
-  injectPageScript();
-}

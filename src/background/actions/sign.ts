@@ -41,7 +41,7 @@ import { throwAfterTimeout } from "../../shared/utils/timing";
 
 export default async function sign(
   certificate: string,
-  hash: string,
+  hash: string[],
   hashFunction: string,
   sender: MessageSender,
   userInteractionTimeout: number,
@@ -76,7 +76,7 @@ export default async function sign(
     ]);
 
     const isResponseValid = (
-      response?.signature &&
+      response?.signature && response?.signature.length &&
       response?.signatureAlgorithm.hashFunction &&
       response?.signatureAlgorithm.paddingScheme &&
       response?.signatureAlgorithm.cryptoAlgorithm

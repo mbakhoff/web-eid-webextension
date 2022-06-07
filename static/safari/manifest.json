@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "default_locale": "en",
-  "name": "Web eID",
-  "description": "Use your electronic identification card for secure authentication and digital signing.",
+  "name": "HIA batch signing",
+  "description": "Sign multiple documents with a single ID-card PIN2 entry",
   "version": "{{package.version}}",
   "icons": {
     "128": "web-eid-icon-128.png"

@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "Web eID",
+  "name": "HIA batch signing",
   "version": "{{package.version}}",
-  "description": "Use your electronic identification card for secure authentication and digital signing.",
+  "description": "Sign multiple documents with a single ID-card PIN2 entry",
   "browser_specific_settings": {
     "gecko": {
-      "id": "{e68418bc-f2b0-4459-a9ea-3e72b6751b07}"
+      "id": "batch-signing@hia"
     }
   },
   "icons": {
@@ -31,7 +31,6 @@
     ]
   },
   "permissions": [
-    "*://*/*",
     "nativeMessaging"
   ]
 }

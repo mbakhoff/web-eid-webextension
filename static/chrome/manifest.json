@@ -1,8 +1,8 @@
 {
-  "manifest_version": 2,
-  "name": "Web eID",
+  "manifest_version": 3,
+  "name": "HIA batch signing",
   "version": "{{package.version}}",
-  "description": "Use your electronic identification card for secure authentication and digital signing.",
+  "description": "Sign multiple documents with a single ID-card PIN2 entry",
   "icons": {
     "128": "icons/web-eid-icon-128.png"
   },
@@ -17,16 +17,13 @@
       "all_frames": true
     }
   ],
-  "browser_action": {
+  "action": {
     "default_icon": "icons/web-eid-icon-128.png"
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ]
+    "service_worker": "background.js"
   },
   "permissions": [
-    "*://*/*",
     "nativeMessaging"
   ]
 }

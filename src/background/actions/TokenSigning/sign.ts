@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2020-2021 Estonian Information System Authority
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -120,7 +120,7 @@ export default async function sign(
       arguments: {
         hashFunction,
 
-        hash:        hashByteArray.toBase64(),
+        hash:        [hashByteArray.toBase64()],
         origin:      (new URL(sourceUrl)).origin,
         certificate: new ByteArray().fromHex(certificate).toBase64(),
 
@@ -133,11 +133,11 @@ export default async function sign(
       throwAfterTimeout(config.TOKEN_SIGNING_USER_INTERACTION_TIMEOUT, new UserTimeoutError()),
     ]);
 
-    if (!response?.signature) {
+    if (!response?.signature || response.signature.length !== 1) {
       return tokenSigningResponse<TokenSigningErrorResponse>("technical_error", nonce);
     } else {
       return tokenSigningResponse<TokenSigningSignResponse>("ok", nonce, {
-        signature: new ByteArray().fromBase64(response.signature).toHex(),
+        signature: new ByteArray().fromBase64(response.signature[0]).toHex(),
 
         warnings,
       });
