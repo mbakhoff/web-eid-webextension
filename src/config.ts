@@ -24,7 +24,7 @@ export default Object.freeze({
   NATIVE_APP_NAME: "eu.webeid.batch",
   VERSION:         "{{package.version}}",
 
-  NATIVE_MESSAGE_MAX_BYTES: 8192,
+  NATIVE_MESSAGE_MAX_BYTES: 1048576,
 
   /**
    * Time given in milliseconds to native application for closing gracefully after a command reply.
